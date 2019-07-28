@@ -40,7 +40,7 @@
 	position: fixed;
 	top: 120px;
 	left: 0;
-	width: 300px;
+	width: 240px;
 	height: calc(100vh - 120px);
 	background: #1c1d22;
 }
@@ -90,7 +90,7 @@
 	transition: color 0.1s;
 }
 
-.menu__link[data-submenu]::after {
+/*.menu__link[data-submenu]::after {
 	content: '\e904';
 	font-family: 'feather';
 	position: absolute;
@@ -98,7 +98,7 @@
 	padding: 0.25em 1.25em;
 	color: #2a2b30;
 }
-
+*/
 .menu__link:hover,
 .menu__link:focus,
 .menu__link[data-submenu]:hover::after,

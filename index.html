@@ -59,11 +59,14 @@
 	</div>
 	<!-- /view -->
 	<script src="js/classie.js"></script>
-	<script src="js/dummydata.js"></script>
+	<!-- <script src="js/dummydata.js"></script> -->
 	<script src="js/main.js"></script>
 	<script>
 	var menuEl;
 	(function() {
+
+		var dummyData = "<li class=\"product\"><div class=\"foodicon foodicon--broccoli\"></div></li><li class=\"product\"><div class=\"foodicon foodicon--broccoli\"></div></li><li class=\"product\"><div class=\"foodicon foodicon--broccoli\"></div></li><li class=\"product\"><div class=\"foodicon foodicon--broccoli\"></div></li>";
+
 		 menuEl = document.getElementById('ml-menu'),
 			mlmenu = new MLMenu(menuEl, {
 				// breadcrumbsCtrl : true, // show breadcrumbs
@@ -100,8 +103,8 @@
 			classie.add(gridWrapper, 'content--loading');
 			setTimeout(function() {
 				classie.remove(gridWrapper, 'content--loading');
-				gridWrapper.innerHTML = '<ul class="products">' + dummyData[itemName] + '<ul>';
-			}, 1000);
+				gridWrapper.innerHTML = '<ul class="products">' + dummyData + '<ul>';
+			}, 300);
 		}
 
 	})();

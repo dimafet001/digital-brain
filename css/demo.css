@@ -206,7 +206,7 @@ a:hover {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 300px;
+	width: 240px;
 	height: 120px;
 	padding: 1em 0 0 0;
 	text-align: center;
@@ -238,10 +238,19 @@ a:hover {
 	margin: 0;
 	padding: 2em;
 	text-align: center;
+	flex-flow: row wrap;
+
+  	list-style: none;
+  
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
 }
 
 .product {
-	display: inline-block;
+	/*display: inline-block;*/
 	width: 200px;
 	height: 200px;
 	margin: 10px;
