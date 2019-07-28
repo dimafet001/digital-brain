@@ -308,6 +308,11 @@ a:hover {
 }
 
 .info .summary {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.info .summary > div {
 	padding-top: 20px;
 	color: #bfc0ff;
 	background-color: #3a3b44;
@@ -315,11 +320,15 @@ a:hover {
     border-radius: 5px;
     padding: 5px;
     width: fit-content;
+    margin-left: 10px;
 }
 
-.info .add-summary {
+.info .summary > .add-summary {
 	display: inline-block;
-	padding-left: 3px;
+	margin-left: 5px;
+	width: 31px;
+	height: 31px;
+	text-align: center;
 }
 
 .cards {
