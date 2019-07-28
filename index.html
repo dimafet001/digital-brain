@@ -155,52 +155,73 @@
 			var gridWrapper = document.querySelector('.cards');
 			gridWrapper.innerHTML = '';
 			classie.add(gridWrapper, 'content--loading');
-			setTimeout(function() {
-				classie.remove(gridWrapper, 'content--loading');
+			
+			classie.remove(gridWrapper, 'content--loading');
 
-				// gridWrapper.innerHTML = '<ul class="products">' + dummyData.repeat(4) + '<ul>';
-				gridWrapper.innerHTML = '<ul class="products"></ul>';
-				//time spent in a month
-				var time = ["", "14hrs", "14hrs", "12hrs", "10hrs", "9hrs", "8hrs", "8hrs", "6hrs", 
-				"5.5hrs", "4hrs", "4hrs", "2hrs", "1.5hrs"]
-				var topics = [[], ["Apple", "HP"], ["AT&T", "Verizon"], ["YCombinator", "HitcherHub"], ["Youtube", "Opera"], 
-				["Facebook", "Instagram"], ["League of Legends", "PUBG"], ["KhanAcademy", "UWC"], ["Physics", "Math"], ["EbscoHost", "scholar.google"], 
-				["Reddit", "StackOverflow"], ["Amazon", "Ebay"], ["NHL", "Wimbledon"], ["Citibank", "Robinhood"]]
+			// gridWrapper.innerHTML = '<ul class="products">' + dummyData.repeat(4) + '<ul>';
+			gridWrapper.innerHTML = '<ul class="products"></ul>';
+			//time spent in a month
+			var time = ["", "14hrs", "14hrs", "12hrs", "10hrs", "9hrs", "8hrs", "8hrs", "6hrs", 
+			"5.5hrs", "4hrs", "4hrs", "2hrs", "1.5hrs"]
+			var topics = [[], ["NodeJS", "CSS"], ["AT&T", "Verizon"], ["YCombinator", "HitcherHub"], ["Youtube", "Opera"], 
+			["Facebook", "Instagram"], ["League of Legends", "PUBG"], ["KhanAcademy", "UWC"], ["Physics", "Math"], ["EbscoHost", "scholar.google"], 
+			["Reddit", "StackOverflow"], ["Amazon", "Ebay"], ["NHL", "Wimbledon"], ["Citibank", "Robinhood"]]
 
-				setTimeout(function() {
-					for (var i = 1; i < Object.keys(mydata).length; i++) {
+			
+			for (var i = 1; i < Object.keys(mydata).length; i++) {
 
-						$('.products').append(dummyData);
-						$('.product:last-child > h3').text(Object.keys(mydata)[i]);
-						$('.product:last-child span').text("Time spent: " + time[i])
-						$('.product:last-child .topic:first-of-type').text(topics[i][0])
-						$('.product:last-child .topic:last-child').text(topics[i][1])
-		
-					}
+				$('.products').append(dummyData);
+				$('.product:last-child > h3').text(Object.keys(mydata)[i]);
+				$('.product:last-child span').text("Time spent: " + time[i])
+				$('.product:last-child .topic:first-of-type').text(topics[i][0])
+				$('.product:last-child .topic:last-child').text(topics[i][1])
+
+			}
+			
+			// var options = ["1", "2", "3", "4", "5"];
+			// $('#select').empty();
+			// $.each(options, function(i, p) {
+			// $('#select').append($('<option></option>').val(p).html(p));
+			// });
+
+			$('li.product').click(function() {
+				$('li.product').removeClass('product--focus')
+				$('li.product span').css({'margin-top':'0px'})
+				$(this).toggleClass('product--focus')
+
+				$('.info').css({'height':'350px'})
+				$('.info').css({'padding-top':'20px'})
+				$('.cards').css({'padding-top':'20px'})
+				$(this).find('span').css({'margin-top':'-150px'})
+
+				$(".info h3").text($(this).find('h3').text())
+				$(".info span").text($(this).find('span').text())
+				$('.info .topic:first-of-type').text($(this).find('.topic:first-of-type').text())
+				$('.info .topic:nth-child(5)').text($(this).find('.topic:last-child').text())
+
+				if ($(this).find("h3").text() == "Online Communities") {
+					$(".links").html('<div class="link" style="background-image: url(\'.\/img\/reddit_logo.png\'); ">						<a href="http:\/\/www.reddit.com" style="color: black; text-shadow: 0.5px 0.5px 1.5px #e4e4e4;">Reddit<\/a><\/div><div class="link" style="background-image: url(\'.\/img\/stackoverflow_logo.png\')"><a href="https:\/\/stackoverflow.com" style="color: #222; text-shadow: 0.5px 0.5px 1.5px #e4e4e4;">StackOverflow<\/a><\/div>');
 					
-					// var options = ["1", "2", "3", "4", "5"];
-					// $('#select').empty();
-					// $.each(options, function(i, p) {
-					// $('#select').append($('<option></option>').val(p).html(p));
-					// });
+					$(".summary div:first-child").text("Solo travel in Russia is actually super fun, the number of hitchhiking destinations are huge.")
+				}
 
-					$('li.product').click(function() {
-						$('li.product').removeClass('product--focus')
-						$('li.product span').css({'margin-top':'0px'})
-						$(this).toggleClass('product--focus')
-
-						$('.info').css({'height':'350px'})
-						$('.info').css({'padding-top':'20px'})
-						$('.cards').css({'padding-top':'20px'})
-						$(this).find('span').css({'margin-top':'-150px'})
-
-					})
-				}, 300);
-
-			}, 300);
+			})
 
 		}, 200);
 
+		$('input').change(function() {
+			console.log("words")
+				var ul = $('.products')
+				ul.children('.product').each(function(i, el) { 
+	   				 if ($('input').val() == "" || $(el).find('h3').text().includes($('input').val())) {
+	   				 } else {
+	   				 	$(el).css({"display":"none"});
+	   				 }
+	   				 if ($('input').val() == "") {
+	   				 	$('.product').css({"display":""});
+	   				 } 
+				});
+		})
 
 
 

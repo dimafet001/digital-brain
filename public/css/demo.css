@@ -312,19 +312,13 @@ a:hover {
 	flex-flow: row wrap;
 }
 
-.info .summary > div:first-of-type {
-	/*padding-top: 20px;	*/
-	margin-top: 50px;
-}
-
 .info .summary > div {
-	
+	padding-top: 20px;
 	color: #bfc0ff;
 	background-color: #3a3b44;
-	
+	margin-top: 50px;
     border-radius: 5px;
     padding: 5px;
-    margin-top: 10px;
     width: fit-content;
     margin-right: 10px;
 }
