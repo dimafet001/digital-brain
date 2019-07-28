@@ -27,7 +27,7 @@
 		<header class="bp-header cf">
 			<div class="dummy-logo">
 				<div class="dummy-icon foodicon foodicon--coconut"></div>
-				<h2 class="dummy-heading">Fooganic</h2>
+				<h2 class="dummy-heading">DigitalBrain</h2>
 			</div>
 			<div class="bp-header__main">
 				<input type="text" placeholder="Search" class="search"/>
@@ -46,7 +46,14 @@
 			</div>
 		</nav>
 		<div class="content">
-			<p class="info">Please choose a category</p>
+			<div class="info">
+				<h3 class="product-title">Computer Science</h3>
+				<span>Time spent: 20hrs</span>
+				<p>Topics: </p>
+				<div class="topic">NodeJS</div>
+				<div class="topic">CSS</div>
+				<div class="summary">box-shadow: inset 0 8px 6px -6px #3a3b42</div>
+			</div>
 			<div class="cards"></div>
 			<!-- Ajax loaded content here -->
 		</div>
@@ -59,7 +66,7 @@
 	var menuEl;
 	(function() {
 
-		var dummyData = "<li class=\"product\"><div class=\"foodicon foodicon--broccoli\"></div></li>";
+		var dummyData = '<li class="product"><h3 class="product-title">Computer<br>Science</h3><span>Time spent: 20hrs</span><p>Topics: </p><div class="topic">NodeJS</div><div class="topic">CSS</div></li>';
 
 		 menuEl = document.getElementById('ml-menu'),
 			mlmenu = new MLMenu(menuEl, {
@@ -88,7 +95,7 @@
 		}
 
 		// simulate grid content loading
-		var gridWrapper = document.querySelector('.content');
+		var gridWrapper = document.querySelector('.cards');
 
 		function loadDummyData(ev, itemName) {
 			ev.preventDefault();
@@ -102,10 +109,39 @@
 				$('li.product').click(function() {
 					$('li.product').removeClass('product--focus')
 					$(this).toggleClass('product--focus')
+
+					$('.info').css({'height':'300px'})
+					$('.cards').css({'padding-top':'20px'})
 				})
 
 			}, 300);
 		}
+
+		setTimeout(function() {
+
+			var gridWrapper = document.querySelector('.cards');
+			gridWrapper.innerHTML = '';
+			classie.add(gridWrapper, 'content--loading');
+			setTimeout(function() {
+				classie.remove(gridWrapper, 'content--loading');
+				gridWrapper.innerHTML = '<ul class="products">' + dummyData.repeat(4) + '<ul>';
+
+				$('li.product').click(function() {
+					$('li.product').removeClass('product--focus')
+					$(this).toggleClass('product--focus')
+
+					$('.info').css({'height':'300px'})
+					$('.info').css({'padding-top':'20px'})
+					$('.cards').css({'padding-top':'20px'})
+
+				})
+
+			}, 300);
+
+		}, 200);
+
+
+
 
 	})();
 

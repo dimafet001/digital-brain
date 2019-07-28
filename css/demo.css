@@ -228,7 +228,7 @@ a:hover {
 .content {
 	position: relative;
 	min-height: 300px;
-	margin: 0 0 0 300px;
+	margin: 0 0 0 240px;
 }
 
 .content--loading {
@@ -238,6 +238,7 @@ a:hover {
 .products {
 	margin: 0;
 	padding: 2em;
+	padding-top: 0;
 	text-align: center;
 	flex-flow: row wrap;
 
@@ -253,7 +254,8 @@ a:hover {
 .product {
 	/*display: inline-block;*/
 	width: 200px;
-	height: 200px;
+	/*height: 200px;*/
+	padding-bottom: 30px; 
 	margin: 10px;
 	border-radius: 5px;
 	background: #1c1d22;
@@ -271,11 +273,40 @@ a:hover {
 
 .info {
 	font-size: 1.1em;
-	font-weight: bold;
-	padding: 20vh 1em 0;
+	font-weight: normal;
+	font-family: 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+	/*padding: 20px 1em 0;*/
+	background-color: #313238;
+	height: 0;
+	margin-top: 110px;
 	text-align: center;
+	overflow: hidden;
 	color: #47484c;
+	box-shadow: inset 0 8px 6px -6px #3a3b42,
+				inset -4px -8px 6px -6px #3a3b42;
+	transition: 1s height, 1s padding-top;
+	text-align: left;
+	padding-left: 60px;
+	color: #f7f7f7;
 }
+
+.info h3 {
+	font-weight: bold;
+}
+
+.info div.topic, .info p {
+	display: inline;
+}
+
+.info p {
+	padding-left: 30px;
+}
+
+.info .summary {
+	padding-top: 20px;
+	color: #bfc0ff;
+}
+
 
 body #cdawrap {
 	top: auto;
@@ -337,6 +368,39 @@ body #cdawrap a:hover.carbon-poweredby {
 	padding: 16px;
 	box-shadow: inset 1px 1px 5px 1px #aaa;
 }
+
+li.product {
+	text-align: left;
+	padding-left: 22px;
+	font-family: 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+	transition: .5s background-color;
+}
+
+li.product > h3 {
+	font-family: 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+	padding-bottom: 8px;
+}
+
+li.product span {
+	display: block;
+	padding-bottom: 4px;
+}
+
+
+li.product p, li.product div.topic  {
+	display: inline;
+}
+
+li.product div.topic:after {
+	content: ", ";
+}
+
+li.product div.topic:last-child:after {
+	content: "";
+}
+
+
+
 /*
 @media screen and (max-width: 1000px) {
 	.search {
