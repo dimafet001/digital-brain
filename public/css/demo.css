@@ -312,13 +312,19 @@ a:hover {
 	flex-flow: row wrap;
 }
 
+.info .summary > div:first-of-type {
+	/*padding-top: 20px;	*/
+	margin-top: 50px;
+}
+
 .info .summary > div {
-	padding-top: 20px;
+	
 	color: #bfc0ff;
 	background-color: #3a3b44;
-	margin-top: 50px;
+	
     border-radius: 5px;
     padding: 5px;
+    margin-top: 10px;
     width: fit-content;
     margin-right: 10px;
 }
@@ -331,11 +337,17 @@ a:hover {
 	text-align: center;
 }
 
+.summary > div:hover {
+	background-color: #a7a7a7;
+	color: black;
+}
+
 .cards {
 	cursor: pointer;
 }
 
 li.product * {
+	color: white;
 	transition: .5s margin-top;
 }
 
@@ -428,6 +440,7 @@ li.product {
 li.product > h3 {
 	font-family: 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
 	padding-bottom: 8px;
+	min-height: 54px;
 }
 
 li.product span {
