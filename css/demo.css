@@ -272,6 +272,10 @@ a:hover {
 	background-color: #252629;
 }
 
+.product-description {
+	overflow: hidden;
+}
+
 .info {
 	font-size: 1.1em;
 	font-weight: normal;
