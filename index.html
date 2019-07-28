@@ -30,14 +30,7 @@
 				<h2 class="dummy-heading">Fooganic</h2>
 			</div>
 			<div class="bp-header__main">
-				<span class="bp-header__present">Blueprint <span class="bp-tooltip bp-icon bp-icon--about" data-content="The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration."></span></span>
-				<h1 class="bp-header__title">Multi-Level Menu</h1>
-				<nav class="bp-nav">
-					<a class="bp-nav__item bp-icon bp-icon--prev" href="http://tympanus.net/Blueprints/PageStackNavigation/" data-info="previous Blueprint"><span>Previous Blueprint</span></a>
-					<!--a class="bp-nav__item bp-icon bp-icon--next" href="" data-info="next Blueprint"><span>Next Blueprint</span></a-->
-					<a class="bp-nav__item bp-icon bp-icon--drop" href="http://tympanus.net/codrops/?p=25521" data-info="back to the Codrops article"><span>back to the Codrops article</span></a>
-					<a class="bp-nav__item bp-icon bp-icon--archive" href="http://tympanus.net/codrops/category/blueprints/" data-info="Blueprints archive"><span>Go to the archive</span></a>
-				</nav>
+				<input type="text" placeholder="Search" class="search"/>
 			</div>
 		</header>
 		<button class="action action--open" aria-label="Open Menu"><span class="icon icon--menu"></span></button>
@@ -54,6 +47,7 @@
 		</nav>
 		<div class="content">
 			<p class="info">Please choose a category</p>
+			<div class="cards"></div>
 			<!-- Ajax loaded content here -->
 		</div>
 	</div>
@@ -65,7 +59,7 @@
 	var menuEl;
 	(function() {
 
-		var dummyData = "<li class=\"product\"><div class=\"foodicon foodicon--broccoli\"></div></li><li class=\"product\"><div class=\"foodicon foodicon--broccoli\"></div></li><li class=\"product\"><div class=\"foodicon foodicon--broccoli\"></div></li><li class=\"product\"><div class=\"foodicon foodicon--broccoli\"></div></li>";
+		var dummyData = "<li class=\"product\"><div class=\"foodicon foodicon--broccoli\"></div></li>";
 
 		 menuEl = document.getElementById('ml-menu'),
 			mlmenu = new MLMenu(menuEl, {
@@ -103,11 +97,18 @@
 			classie.add(gridWrapper, 'content--loading');
 			setTimeout(function() {
 				classie.remove(gridWrapper, 'content--loading');
-				gridWrapper.innerHTML = '<ul class="products">' + dummyData + '<ul>';
+				gridWrapper.innerHTML = '<ul class="products">' + dummyData.repeat(4) + '<ul>';
+
+				$('li.product').click(function() {
+					$('li.product').removeClass('product--focus')
+					$(this).toggleClass('product--focus')
+				})
+
 			}, 300);
 		}
 
 	})();
+
 	</script>
 </body>
 

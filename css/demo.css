@@ -67,9 +67,10 @@ a:hover {
 }
 
 .bp-header__main {
-	margin: 0 0 0 auto;
+	width: calc(100% - 240px);
+	margin: 0 0 0 240px;
 	padding: 2em 3em 0;
-	text-align: right;
+	text-align: center;
 }
 
 .bp-header__title {
@@ -264,6 +265,10 @@ a:hover {
 	color: #3b3d4a;
 }
 
+.product--focus {
+	background-color: #252629;
+}
+
 .info {
 	font-size: 1.1em;
 	font-weight: bold;
@@ -311,3 +316,30 @@ body #cdawrap a:hover.carbon-poweredby {
 		overflow: auto;
 	}
 }
+
+.search {
+	min-width: 100%;
+	max-width: 600px;
+	height: 40px;
+	margin: auto;
+	padding: 16px;
+	font-size: 20px;
+	background-color: #eaeaea;
+	border: solid 1px #e4e4e4;
+	border-radius: 3px;
+	box-shadow: inset 1px 1px 5px 0px #aaa;
+}
+
+.search:focus {
+	border: none;
+	outline: none;
+	margin: auto;
+	padding: 16px;
+	box-shadow: inset 1px 1px 5px 1px #aaa;
+}
+/*
+@media screen and (max-width: 1000px) {
+	.search {
+		width: 
+	}
+}*/
