@@ -75,7 +75,7 @@
 
 	MLMenu.prototype.options = {
 		// show breadcrumbs
-		breadcrumbsCtrl : true,
+		breadcrumbsCtrl : false,
 		// initial breadcrumb text
 		initialBreadcrumb : 'all',
 		// show back button
@@ -219,6 +219,7 @@
 		if( this.isAnimating ) {
 			return false;
 		}
+
 		this.isAnimating = true;
 		
 		// save "parent" menu index for back navigation

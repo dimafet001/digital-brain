@@ -117,6 +117,10 @@
 	color: #5c5edc;
 }
 
+.menu__link--current {
+	color: #5c5edc;
+}
+
 [class^='animate-'],
 [class*=' animate-'] {
 	visibility: visible;
