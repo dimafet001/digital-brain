@@ -320,7 +320,7 @@ a:hover {
     border-radius: 5px;
     padding: 5px;
     width: fit-content;
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .info .summary > .add-summary {
@@ -337,6 +337,24 @@ a:hover {
 
 li.product * {
 	transition: .5s margin-top;
+}
+
+.links {
+	margin-top: 20px;
+	display: flex;
+}
+
+.link {
+	width: fit-content;
+	height: 52px;
+	text-align: center;
+	padding: 15px;
+	border-radius: 5px;
+	background-position: center;
+	background-size: 50%;
+	font-family: 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	margin-right: 20px;
 }
 
 body #cdawrap {
