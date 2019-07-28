@@ -259,6 +259,7 @@ a:hover {
 	margin: 10px;
 	border-radius: 5px;
 	background: #1c1d22;
+	overflow: hidden;
 }
 
 .product .foodicon {
@@ -305,8 +306,25 @@ a:hover {
 .info .summary {
 	padding-top: 20px;
 	color: #bfc0ff;
+	background-color: #3a3b44;
+	margin-top: 50px;
+    border-radius: 5px;
+    padding: 5px;
+    width: fit-content;
 }
 
+.info .add-summary {
+	display: inline-block;
+	padding-left: 3px;
+}
+
+.cards {
+	cursor: pointer;
+}
+
+li.product * {
+	transition: .5s margin-top;
+}
 
 body #cdawrap {
 	top: auto;
@@ -399,7 +417,11 @@ li.product div.topic:last-child:after {
 	content: "";
 }
 
-
+.icon--logo {
+	background: url('../img/logo.png');
+	width: 64px;
+	height: 64px;
+}
 
 /*
 @media screen and (max-width: 1000px) {

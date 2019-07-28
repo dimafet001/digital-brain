@@ -26,7 +26,7 @@
 		<!-- Blueprint header -->
 		<header class="bp-header cf">
 			<div class="dummy-logo">
-				<div class="dummy-icon foodicon foodicon--coconut"></div>
+				<img src="./img/logo.png" class="dummy-icon foodicon icon--logo"></img>
 				<h2 class="dummy-heading">DigitalBrain</h2>
 			</div>
 			<div class="bp-header__main">
@@ -53,6 +53,7 @@
 				<div class="topic">NodeJS</div>
 				<div class="topic">CSS</div>
 				<div class="summary">box-shadow: inset 0 8px 6px -6px #3a3b42</div>
+
 			</div>
 			<div class="cards"></div>
 			<!-- Ajax loaded content here -->
@@ -128,11 +129,13 @@
 
 				$('li.product').click(function() {
 					$('li.product').removeClass('product--focus')
+					$('li.product span').css({'margin-top':'0px'})
 					$(this).toggleClass('product--focus')
 
 					$('.info').css({'height':'300px'})
 					$('.info').css({'padding-top':'20px'})
 					$('.cards').css({'padding-top':'20px'})
+					$(this).find('span').css({'margin-top':'-150px'})
 
 				})
 
