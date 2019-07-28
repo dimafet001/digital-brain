@@ -64,7 +64,7 @@
 					</div>
 					
 					<div class="link" style="background-color: #100E16 ">
-						<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" style="color: #ddd; text-shadow: 0.5px 0.5px 1.5px #e4e4e4;">
+						<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" style="color: #dddser; text-shadow: 0.5px 0.5px 1.5px #e4e4e4;">
 							CSS-Tricks
 						</a>
 					</div>
@@ -79,6 +79,7 @@
 	<script src="js/classie.js"></script>
 	<!-- <script src="js/dummydata.js"></script> -->
 	<script src="js/main.js"></script>
+	<script type="text/javascript" src="js/categories.js"></script>
 	<script>
 	var menuEl;
 	(function() {
@@ -141,6 +142,9 @@
 			classie.add(gridWrapper, 'content--loading');
 			setTimeout(function() {
 				classie.remove(gridWrapper, 'content--loading');
+
+				// var mydata = data
+
 				gridWrapper.innerHTML = '<ul class="products">' + dummyData.repeat(4) + '<ul>';
 
 				// var options = ["1", "2", "3", "4", "5"];
